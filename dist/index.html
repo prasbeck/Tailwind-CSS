@@ -1,53 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html x-data="{ dark : true}" :class="dark ? 'dark' : '' " lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Mini Project</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-<body class=" bg-blue-800 debug-screens">
+<body class="debug-screens">
 
-    <div class="container px-8 py-16 min-h-screen bg-gray-100 mx-auto">
+    <div class="container dark:bg-gray-900 m-auto px-6 py-8 min-h-screen">
         <! - page header / headings ->
         <section class="text-center">
             <div>
-                <h1>Tom Gonzales home training <br> I'll get you in shape!</h1>
-                <h2>Muscle building • Functional training • Nutritional advice</h2>
+                <h1 class="">Tom Gonzales home training <br>
+                    <span class="text-indigo-900 italic text-4xl sm:text-5xl lg:text-7xl opacity-80 dark:text-indigo-500">
+                        <q>&nbsp;I'll get you in shape!&nbsp;</q>
+                    </span>
+                </h1>
+                <h2>Muscle building • Functional training <br class="sm:hidden"> <span class="hidden sm:inline"> • </span>Nutritional advice</h2>
             </div>
         </section>
         
-        <section class="mt-8 grid grid-cols-2 gap-4" id="image_services" class="mt-8">
+        <section class="mt-8 sm:grid sm:grid-cols-2 gap-5 md:gap-10 xl:w-9/12 xl:m-auto" id="image_services">
             <! - picture ->
-            <div id="image">
-                <img src="img/tom.jpg" alt="Tom Gonzales Online Training">
+            <div id="image" class="mx-auto sm:ml-auto">
+                <img class="mx-auto" src="img/tom.jpg" alt="Tom Gonzales Online Training">
             </div>
             <! - Services ->
             <div id="services">
                 <h3>I offer you:</h3>
                 <ul>
-                    <li>Lessons via Skype and you can record all sessions and watch them again later. </li>
-                    <li>Holistic full body training</li>
-                    <li>Training without equipment</li>
-                    <li>Pain reduction</li>
-                    <li>Tailored nutrition plans</li>
+                    <li class="md:leading-normal">Lessons via Skype and you can record all sessions and watch them again later. </li>
+                    <li class="md:leading-normal">Holistic full body training</li>
+                    <li class="md:leading-normal">Training without equipment</li>
+                    <li class="md:leading-normal">Pain reduction</li>
+                    <li class="md:leading-normal">Tailored nutrition plans</li>
                 </ul>
-                <h3>My qualifications:</h3>
-                <ul>
+                <h3 class="hidden mt-10 md:block">My qualifications:</h3>
+                <ul class="hidden md:block">
                     <li>Certified nutritionist</li>
                     <li>Certified fitness trainer</li>
                     <li>5 years of experience in 1: 1 training</li>
                 </ul>
             </div>
         </section>
-                    
+
+        <!- only for small  screens ->
+        <section class="mt-4 md:hidden">
+            <h3>My qualifications:</h3>
+            <ul>
+                <li>Certified nutritionist</li>
+                <li>Certified fitness trainer</li>
+                <li>5 years of experience in 1: 1 training</li>
+            </ul>
+        </section>
     
                     <! - Prices and payment ->
-        <section class="mt-8 w-8/12 mx-auto" id="price_payment">
+        <section class="mt-8 lg:w-8/12 xl:w-7/12 mx-auto" id="price_payment">
             <div>
                 <h2>Prices and payment</h2>
-                <p>My most important goal is that you get ahead with your goals.</p>
+                <p class="text-justify">My most important goal is that you get ahead with your goals.</p>
                 <p>In a free opening session we will discuss what you want to achieve and how much you can or
                     want to spend. Then we are guaranteed to find a solution that suits you.</p>
             </div>
@@ -56,14 +70,21 @@
     
                         <! - Contact ->
         <section class="mt-8" id="contact">
-            <div class="grid grid-cols-2 mx-auto w-8/12">
+            <div class="flex justify-around lg:mx-auto lg:w-8/12 ">
                 <div id="email">
                     <p>Your message:</p>
-                    <a href="mailto:markusgonzales@gmail.com">Send an Email</a>
+                    <a href="#" class="bg-gray-300 px-4 py-2 rounded shadow-sm dark:hover:bg-gray-500
+                    hover:bg-gray-400 focus:ring-2 focus:ring-yellow-400 hover:shadow-none transition flex items-center w-max">
+                        <svg class="h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign">
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+                        </svg>
+                        Send an Email</a>
                 </div>
                 <div id="whatsApp_telefon">
                     <p>WhatsApp:</p>
-                    1 222 555 44 33
+                    <span class="xl:text-xl dark:text-white">1 222 555 44 33</span> 
                 </div>
             </div>
         </section>
